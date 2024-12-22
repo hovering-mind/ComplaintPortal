@@ -16,7 +16,7 @@ app.get("/hey",(req, res) =>{
     res.send("I am listening")
 })
 //mailobj.validate(req.body)
-app.all("/sendMail",function(req, res){
+app.post("/sendMail",function(req, res){
     const mailbody = mailobj.validate(req.body)
     sendMail("codekabila.club@gmail.com", mailbody.type, mailbody.desc)
     res.send("hello")
